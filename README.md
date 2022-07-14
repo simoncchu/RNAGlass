@@ -34,5 +34,18 @@ RNAGlass is designed to identify and quantity the transfered mRNA from root to s
 
 ## **Basic usage**
 
+```
+RNAGlass=/full-path/RNAGlass/transfer_rna_identification.py
+DNA_ROOTSTOCK=/full-path/DNA/deepvariant_fuji/output.vcf.gz
+DNA_SCION=/full-path/DNA/deepvariant_mm106/output.vcf.gz
+RNA_SCION=/full-path/RNA/all_rslts/S106_2_FUJI_variants.vcf
+GENE=/full-path/geneprediction/FUJI/EVM.final.gene.gff3
+PREFIX=/full-patth/run_RNAGlass/results/
+
+python ${RNAGlass} --rna ${RNA_SCION} --gene ${GENE} --dna_up ${DNA_SCION} --dna_bottom ${DNA_ROOTSTOCK} -o ${PREFIX}"mutation_transfer_rootstock_2_scion.vcf"
+
+
+```
+
 ## **Ouptput**
 A VCF file containing the candidate barcode snps will be generated.
